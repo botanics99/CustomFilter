@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>CustomBlocker</title>
+		<script language="JavaScript" src="./src/url_analyzer.js"></script>
+		<script type="text/javascript">
+		function testUrl ()
+		{
+			var url = document.getElementById("inputUrl").value;
+			var list = UrlAnalyzer.suggestRegExp("https", "www.maripo.org", "blog/hoge.html");
+			document.getElementById("outputUrl").value = list.join("\n");
+		}
+		</script>
+	</head>
+	<body>
+		<div>
+			<input type="text" id="inputUrl"/>
+			<input type="button" value="test" onclick="testUrl()"/>
+		</div>
+		<div>
+			<textarea id="outputUrl" cols="100" rows="20"></textarea>
+		</div>
+		
+	</body>
+</html>
